@@ -1,0 +1,31 @@
+{
+    "name": "mohamedhk2/mail-to-image",
+    "description": "Convert email address to image to protect against spamming",
+    "keywords": [
+        "php",
+        "mail",
+        "mailto",
+        "image",
+        "spam",
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "mohamedhk2",
+            "email": "mohamedhk2@yahoo.fr",
+            "homepage": "https://github.com/mohamedhk2",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/mohamedhk2/mail-to-image",
+    "require": {
+        "php": "^7.0",
+        "ext-gd": "*"
+    },
+    "autoload": {
+        "files": [
+            "src/mail-to-image.php"
+        ]
+    }
+}
