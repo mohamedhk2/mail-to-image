@@ -8,7 +8,7 @@
  *
  * @return string
  */
-function mailToImage(string $string, $clickable = false, int $font = 4, array $color = [0, 0, 0], array $background = [255, 255, 255])
+function mailToImage(string $string, bool $clickable = false, int $font = 4, array $color = [0, 0, 0], array $background = [255, 255, 255])
 {
     if (empty($color)) $color = [0, 0, 0];
     if (empty($background)) $background = [255, 255, 255];
@@ -33,6 +33,6 @@ function mailToImage(string $string, $clickable = false, int $font = 4, array $c
     $e = implode(',', $e);
     $d = implode(',', $d);
     return $clickable
-        ? "<img src=\"data:image/jpeg;base64,{$imagedata}\" alt style=\"cursor: pointer;\" onclick=\"fcc=String.fromCharCode;window.location.href=fcc(...this.dataset.e.split(','))+fcc(...this.dataset.d.split(','));\" data-e=\"{$e}\" data-d=\"{$d}\" />"
-        : "<img src=\"data:image/jpeg;base64,{$imagedata}\" alt />";
+        ? "<img src=\"data:image/jpeg;base64,{$imagedata}\" class=mti alt style=\"cursor: pointer;\" onclick=\"fcc=String.fromCharCode;window.location.href=fcc(...this.dataset.e.split(','))+fcc(...this.dataset.d.split(','));\" data-e=\"{$e}\" data-d=\"{$d}\" />"
+        : "<img src=\"data:image/jpeg;base64,{$imagedata}\" class=mti alt />";
 }
