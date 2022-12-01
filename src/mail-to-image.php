@@ -5,10 +5,10 @@
  * @param int $font
  * @param int[] $color
  * @param int[] $background
- *
+ * @param string|null $class
  * @return string
  */
-function mailToImage(string $string, bool $clickable = false, int $font = 4, array $color = [0, 0, 0], array $background = [255, 255, 255])
+function mailToImage(string $string, bool $clickable = false, int $font = 4, array $color = [0, 0, 0], array $background = [255, 255, 255], ?string $class = 'mti')
 {
     if (empty($color)) $color = [0, 0, 0];
     if (empty($background)) $background = [255, 255, 255];
@@ -33,6 +33,6 @@ function mailToImage(string $string, bool $clickable = false, int $font = 4, arr
     $e = implode(',', $e);
     $d = implode(',', $d);
     return $clickable
-        ? "<img src=\"data:image/jpeg;base64,{$imagedata}\" class=mti alt style=\"cursor: pointer;\" onclick=\"fcc=String.fromCharCode;window.location.href=fcc(...this.dataset.e.split(','))+fcc(...this.dataset.d.split(','));\" data-e=\"{$e}\" data-d=\"{$d}\" />"
-        : "<img src=\"data:image/jpeg;base64,{$imagedata}\" class=mti alt />";
+        ? "<img src=\"data:image/jpeg;base64,{$imagedata}\" class=\"{$class}\" alt style=\"cursor: pointer;\" onclick=\"fcc=String.fromCharCode;window.location.href=fcc(...this.dataset.e.split(','))+fcc(...this.dataset.d.split(','));\" data-e=\"{$e}\" data-d=\"{$d}\" />"
+        : "<img src=\"data:image/jpeg;base64,{$imagedata}\" class=\"{$class}\" alt />";
 }

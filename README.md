@@ -40,10 +40,20 @@ array(R, G, B)
 <?= mailToImage('mohamedhk2@mail-to-image.test', false, 4, [0, 0, 0], [255, 255, 255]) ?>
 ```
 
+#### image class
+nullable string  
+`default: mti`
+```php
+<?= mailToImage('mohamedhk2@mail-to-image.test', false, 4, [0, 0, 0], [255, 255, 255], 'mti') ?>
+```
+```php
+<?= mailToImage('mohamedhk2@mail-to-image.test', false, 4, [0, 0, 0], [255, 255, 255], null) ?>
+```
+
 #### Laravel
 
 ```blade
-{!! mailToImage('mohamedhk2@mail-to-image.test') !!}
+{!! mailToImage( ... ) !!}
 ```
 
 ## Sponsors
